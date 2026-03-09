@@ -1,0 +1,160 @@
+{
+  "name": "francaisscript",
+  "displayName": "FrançaisScript",
+  "description": "Support officiel de FrançaisScript (.frs) : coloration syntaxique, autocomplétion, snippets et exécution directe depuis VS Code.",
+  "version": "1.0.2",
+  "publisher": "francaisscript",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets",
+    "Other"
+  ],
+  "keywords": [
+    "français",
+    "french",
+    "francaisscript",
+    "frscript",
+    "langage français",
+    "programmation",
+    "débutant",
+    "éducation"
+  ],
+  "icon": "icons/icon.png",
+  "galleryBanner": {
+    "color": "#1a2744",
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/francaisscript/vscode-extension"
+  },
+  "bugs": {
+    "url": "https://github.com/francaisscript/vscode-extension/issues"
+  },
+  "homepage": "https://github.com/francaisscript/vscode-extension#readme",
+  "activationEvents": [
+    "onLanguage:francaisscript"
+  ],
+  "main": "./src/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "francaisscript",
+        "aliases": [
+          "FrançaisScript",
+          "francaisscript",
+          "FRScript"
+        ],
+        "extensions": [
+          ".fs",
+          ".frs"
+        ],
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "./icons/file-icon.png",
+          "dark": "./icons/file-icon.png"
+        }
+      }
+    ],
+    "grammars": [
+      {
+        "language": "francaisscript",
+        "scopeName": "source.francaisscript",
+        "path": "./syntaxes/francaisscript.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "francaisscript",
+        "path": "./snippets/francaisscript.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "francaisscript.executer",
+        "title": "▶ Exécuter le programme",
+        "category": "FrançaisScript",
+        "icon": "$(play)"
+      },
+      {
+        "command": "francaisscript.nouveauFichier",
+        "title": "Nouveau fichier .frs",
+        "category": "FrançaisScript",
+        "icon": "$(new-file)"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "francaisscript.executer",
+          "when": "resourceLangId == francaisscript",
+          "group": "navigation"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "francaisscript.executer",
+          "when": "resourceLangId == francaisscript",
+          "group": "1_modification"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "francaisscript.executer",
+          "when": "resourceLangId == francaisscript"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "francaisscript.executer",
+        "key": "ctrl+enter",
+        "mac": "cmd+enter",
+        "when": "resourceLangId == francaisscript && editorTextFocus"
+      }
+    ],
+    "configurationDefaults": {
+      "[francaisscript]": {
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
+        "editor.wordWrap": "on",
+        "editor.suggest.showKeywords": true,
+        "editor.quickSuggestions": {
+          "other": true,
+          "comments": false,
+          "strings": false
+        }
+      }
+    },
+    "configuration": {
+      "title": "FrançaisScript",
+      "properties": {
+        "francaisscript.afficherSortie": {
+          "type": "string",
+          "default": "panneau",
+          "enum": [
+            "panneau",
+            "terminal"
+          ],
+          "enumDescriptions": [
+            "Afficher la sortie dans le panneau Output de VS Code",
+            "Afficher la sortie dans le terminal intégré"
+          ],
+          "description": "Où afficher la sortie des programmes FrançaisScript."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "echo 'Prêt à publier'",
+    "package": "vsce package --no-dependencies",
+    "publish": "vsce publish --no-dependencies"
+  },
+  "devDependencies": {
+    "@vscode/vsce": "^2.22.0"
+  }
+}

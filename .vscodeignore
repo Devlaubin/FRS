@@ -1,0 +1,48 @@
+# Fichiers exclus du package publié sur le Marketplace
+# Tout ce qui est listé ici ne sera PAS inclus dans le .vsix
+
+# Dépendances de développement
+node_modules/**
+.npmrc
+
+# Fichiers de configuration Git
+.git/**
+.gitignore
+.gitattributes
+
+# Fichiers de configuration CI/CD
+.github/**
+.travis.yml
+.circleci/**
+
+# Fichiers de test
+test/**
+**/*.test.js
+**/*.spec.js
+
+# Fichiers de configuration éditeurs
+.vscode/**
+.editorconfig
+
+# Fichiers temporaires
+*.vsix
+out/**
+tmp/**
+*.log
+
+# Scripts de build
+Makefile
+scripts/**
+
+# Ce qui EST inclus (pour référence) :
+# ✅ src/extension.js
+# ✅ syntaxes/francaisscript.tmLanguage.json
+# ✅ snippets/francaisscript.json
+# ✅ icons/icon.png
+# ✅ icons/file-icon.svg
+# ✅ images/screenshot.png
+# ✅ language-configuration.json
+# ✅ package.json
+# ✅ README.md
+# ✅ CHANGELOG.md
+# ✅ LICENSE

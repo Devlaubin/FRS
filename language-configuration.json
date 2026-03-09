@@ -1,0 +1,30 @@
+{
+  "comments": {
+    "lineComment": "#"
+  },
+  "brackets": [
+    ["[", "]"],
+    ["(", ")"]
+  ],
+  "autoClosingPairs": [
+    { "open": "[",  "close": "]" },
+    { "open": "(",  "close": ")" },
+    { "open": "\"", "close": "\"", "notIn": ["string"] }
+  ],
+  "surroundingPairs": [
+    ["[", "]"],
+    ["(", ")"],
+    ["\"", "\""]
+  ],
+  "indentationRules": {
+    "increaseIndentPattern": "^\\s*(si .+ alors|sinon si .+ alors|sinon|tant que .+ faire|répéter .+ fois|fonction .+)\\s*$",
+    "decreaseIndentPattern": "^\\s*(fin si|fin tant que|fin répéter|fin fonction|sinon si|sinon)\\s*"
+  },
+  "onEnterRules": [
+    {
+      "beforeText": "^\\s*(si .+ alors|sinon si .+ alors|sinon|tant que .+ faire|répéter .+ fois|fonction .+)\\s*$",
+      "action": { "indent": "indent" }
+    }
+  ],
+  "wordPattern": "[a-zA-ZÀ-ÿ_][a-zA-ZÀ-ÿ0-9_]*"
+}

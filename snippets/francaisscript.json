@@ -1,0 +1,169 @@
+{
+  "Variable": {
+    "prefix": "var",
+    "body": ["variable ${1:nom} = ${2:valeur}"],
+    "description": "Déclare une variable"
+  },
+  "Liste": {
+    "prefix": "liste",
+    "body": ["liste ${1:nom} = [${2}]"],
+    "description": "Déclare une liste"
+  },
+  "Afficher": {
+    "prefix": "aff",
+    "body": ["afficher ${1:\"message\"}"],
+    "description": "Affiche une valeur"
+  },
+  "Si": {
+    "prefix": "si",
+    "body": [
+      "si ${1:condition} alors",
+      "\t${2:# instructions}",
+      "fin si"
+    ],
+    "description": "Bloc conditionnel si/fin si"
+  },
+  "Si Sinon": {
+    "prefix": "sisi",
+    "body": [
+      "si ${1:condition} alors",
+      "\t${2:# instructions}",
+      "sinon",
+      "\t${3:# instructions}",
+      "fin si"
+    ],
+    "description": "Bloc si/sinon/fin si"
+  },
+  "Si Sinon Si": {
+    "prefix": "sisisi",
+    "body": [
+      "si ${1:condition} alors",
+      "\t${2:# instructions}",
+      "sinon si ${3:autre_condition} alors",
+      "\t${4:# instructions}",
+      "sinon",
+      "\t${5:# instructions}",
+      "fin si"
+    ],
+    "description": "Bloc si/sinon si/sinon/fin si"
+  },
+  "Tant Que": {
+    "prefix": "tq",
+    "body": [
+      "tant que ${1:condition} faire",
+      "\t${2:# instructions}",
+      "fin tant que"
+    ],
+    "description": "Boucle tant que"
+  },
+  "Répéter": {
+    "prefix": "rep",
+    "body": [
+      "répéter ${1:10} fois",
+      "\t${2:# instructions}",
+      "fin répéter"
+    ],
+    "description": "Boucle répéter N fois"
+  },
+  "Boucle avec compteur": {
+    "prefix": "pour",
+    "body": [
+      "variable ${1:i} = ${2:0}",
+      "tant que ${1:i} < ${3:10} faire",
+      "\t${4:afficher ${1:i}}",
+      "\tvariable ${1:i} = ${1:i} + 1",
+      "fin tant que"
+    ],
+    "description": "Boucle avec compteur (équivalent de for)"
+  },
+  "Fonction": {
+    "prefix": "fn",
+    "body": [
+      "fonction ${1:nom}(${2:param})",
+      "\t${3:# instructions}",
+      "\tretourner ${4:résultat}",
+      "fin fonction"
+    ],
+    "description": "Définit une fonction"
+  },
+  "Fonction sans retour": {
+    "prefix": "fns",
+    "body": [
+      "fonction ${1:nom}(${2:param})",
+      "\t${3:# instructions}",
+      "fin fonction"
+    ],
+    "description": "Définit une fonction sans valeur de retour"
+  },
+  "Ajouter à liste": {
+    "prefix": "aj",
+    "body": ["ajouter ${1:valeur} à ${2:liste}"],
+    "description": "Ajoute un élément à une liste"
+  },
+  "Parcourir liste": {
+    "prefix": "parc",
+    "body": [
+      "variable ${1:i} = 0",
+      "tant que ${1:i} < longueur(${2:liste}) faire",
+      "\tafficher ${2:liste}[${1:i}]",
+      "\tvariable ${1:i} = ${1:i} + 1",
+      "fin tant que"
+    ],
+    "description": "Parcourir tous les éléments d'une liste"
+  },
+  "Afficher variable": {
+    "prefix": "affv",
+    "body": ["afficher \"${1:label} : \" + texte(${2:variable})"],
+    "description": "Affiche un label et une variable convertie en texte"
+  },
+  "Programme de base": {
+    "prefix": "prog",
+    "body": [
+      "# ${1:Description du programme}",
+      "# Auteur : ${2:Votre nom}",
+      "",
+      "# === Variables principales ===",
+      "variable ${3:nom} = ${4:valeur}",
+      "",
+      "# === Programme principal ===",
+      "afficher \"Début du programme\"",
+      "",
+      "${5:# Votre code ici}",
+      "",
+      "afficher \"Fin du programme\""
+    ],
+    "description": "Structure de base d'un programme FrançaisScript"
+  },
+  "FizzBuzz": {
+    "prefix": "fizzbuzz",
+    "body": [
+      "variable n = 1",
+      "tant que n <= ${1:30} faire",
+      "\tsi n % 15 = 0 alors",
+      "\t\tafficher \"FizzBuzz\"",
+      "\tsinon si n % 3 = 0 alors",
+      "\t\tafficher \"Fizz\"",
+      "\tsinon si n % 5 = 0 alors",
+      "\t\tafficher \"Buzz\"",
+      "\tsinon",
+      "\t\tafficher texte(n)",
+      "\tfin si",
+      "\tvariable n = n + 1",
+      "fin tant que"
+    ],
+    "description": "FizzBuzz classique"
+  },
+  "Nombre aléatoire": {
+    "prefix": "hasard",
+    "body": ["variable ${1:n} = hasard(${2:1}, ${3:100})"],
+    "description": "Génère un nombre aléatoire"
+  },
+  "Commentaire section": {
+    "prefix": "sect",
+    "body": [
+      "# === ${1:Titre de la section} ===",
+      "${2}"
+    ],
+    "description": "Commentaire de section"
+  }
+}

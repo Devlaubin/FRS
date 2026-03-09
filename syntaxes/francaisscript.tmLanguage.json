@@ -1,0 +1,109 @@
+{
+  "name": "FrançaisScript",
+  "scopeName": "source.francaisscript",
+  "fileTypes": ["fs", "frs"],
+  "patterns": [
+    { "include": "#commentaire" },
+    { "include": "#chaine" },
+    { "include": "#nombre" },
+    { "include": "#booleen" },
+    { "include": "#nul" },
+    { "include": "#mot_cle_bloc_fin" },
+    { "include": "#mot_cle_bloc" },
+    { "include": "#mot_cle_action" },
+    { "include": "#mot_cle_logique" },
+    { "include": "#fonction_builtin" },
+    { "include": "#declaration_fonction" },
+    { "include": "#appel_fonction" },
+    { "include": "#operateur" },
+    { "include": "#variable_ref" }
+  ],
+  "repository": {
+
+    "commentaire": {
+      "name": "comment.line.number-sign.francaisscript",
+      "match": "#.*$"
+    },
+
+    "chaine": {
+      "name": "string.quoted.double.francaisscript",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        { "name": "constant.character.escape.francaisscript", "match": "\\\\." }
+      ]
+    },
+
+    "nombre": {
+      "name": "constant.numeric.francaisscript",
+      "match": "\\b-?[0-9]+(?:\\.[0-9]+)?\\b"
+    },
+
+    "booleen": {
+      "name": "constant.language.boolean.francaisscript",
+      "match": "\\b(vrai|faux)\\b"
+    },
+
+    "nul": {
+      "name": "constant.language.null.francaisscript",
+      "match": "\\bnul\\b"
+    },
+
+    "mot_cle_bloc_fin": {
+      "name": "keyword.control.end.francaisscript",
+      "match": "\\b(fin\\s+si|fin\\s+tant\\s+que|fin\\s+répéter|fin\\s+fonction)\\b"
+    },
+
+    "mot_cle_bloc": {
+      "name": "keyword.control.francaisscript",
+      "match": "\\b(si|alors|sinon\\s+si|sinon|tant\\s+que|faire|répéter|fois|fonction|retourner)\\b"
+    },
+
+    "mot_cle_action": {
+      "name": "keyword.other.francaisscript",
+      "match": "\\b(variable|liste|ajouter|à|afficher)\\b"
+    },
+
+    "mot_cle_logique": {
+      "name": "keyword.operator.logical.francaisscript",
+      "match": "\\b(et|ou|non)\\b"
+    },
+
+    "fonction_builtin": {
+      "name": "support.function.builtin.francaisscript",
+      "match": "\\b(afficher|hasard|arrondi|plancher|plafond|absolu|racine|texte|nombre|longueur|majuscules|minuscules|inverser|contient)(?=\\s*\\()"
+    },
+
+    "declaration_fonction": {
+      "name": "entity.name.function.francaisscript",
+      "match": "(?<=\\bfonction\\s{1,20})[a-zA-ZÀ-ÿ_][a-zA-ZÀ-ÿ0-9_]*"
+    },
+
+    "appel_fonction": {
+      "name": "entity.name.function.call.francaisscript",
+      "match": "\\b[a-zA-ZÀ-ÿ_][a-zA-ZÀ-ÿ0-9_]*(?=\\s*\\()"
+    },
+
+    "operateur": {
+      "patterns": [
+        {
+          "name": "keyword.operator.comparison.francaisscript",
+          "match": "(<=|>=|!=|≤|≥|≠|<|>)"
+        },
+        {
+          "name": "keyword.operator.assignment.francaisscript",
+          "match": "(?<![<>!])=(?!=)"
+        },
+        {
+          "name": "keyword.operator.arithmetic.francaisscript",
+          "match": "[+\\-*/%]"
+        }
+      ]
+    },
+
+    "variable_ref": {
+      "name": "variable.other.francaisscript",
+      "match": "\\b[a-zA-ZÀ-ÿ_][a-zA-ZÀ-ÿ0-9_]*\\b"
+    }
+  }
+}
