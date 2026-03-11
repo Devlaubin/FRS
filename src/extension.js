@@ -2,10 +2,6 @@
 
 const vscode = require('vscode');
 
-// ═══════════════════════════════════════════════════════════════
-//  INTERPRETEUR FRANÇAISSCRIPT (embarqué dans l'extension)
-// ═══════════════════════════════════════════════════════════════
-
 function tokeniser(code) {
     const tokens = [];
     let i = 0;
@@ -373,10 +369,6 @@ class Interpreteur {
     }
 }
 
-// ═══════════════════════════════════════════════════════════════
-//  EXTENSION VS CODE
-// ═══════════════════════════════════════════════════════════════
-
 let panneau = null;
 
 function getPanneau() {
@@ -429,7 +421,7 @@ function executerCode(code, nomFichier) {
 
 function activate(context) {
 
-    // ── Commande : Exécuter ──
+
     const cmdExecuter = vscode.commands.registerCommand('francaisscript.executer', async () => {
         const editeur = vscode.window.activeTextEditor;
         if (!editeur) {
@@ -452,7 +444,6 @@ function activate(context) {
         vscode.window.setStatusBarMessage('$(check) FrançaisScript : Exécution terminée', 3000);
     });
 
-    // ── Commande : Nouveau fichier ──
     const cmdNouveau = vscode.commands.registerCommand('francaisscript.nouveauFichier', async () => {
         const contenu = `# Mon programme FrançaisScript
 # ================================
@@ -475,7 +466,6 @@ fin si
         await vscode.window.showTextDocument(doc);
     });
 
-    // ── Autocomplétion ──
     const completion = vscode.languages.registerCompletionItemProvider(
         { language: 'francaisscript' },
         {
@@ -543,7 +533,6 @@ fin si
         }
     );
 
-    // ── Survol (hover) ──
     const hover = vscode.languages.registerHoverProvider(
         { language: 'francaisscript' },
         {
@@ -593,7 +582,6 @@ fin si
         }
     );
 
-    // ── Barre de statut ──
     const barreStatut = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 100);
     barreStatut.command = 'francaisscript.executer';
     barreStatut.text = '$(play) FrançaisScript';
