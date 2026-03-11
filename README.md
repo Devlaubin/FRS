@@ -10,17 +10,17 @@
 
 | Fonctionnalité | Description |
 |---|---|
-| 🎨 **Coloration syntaxique** | Mots-clés, chaînes, nombres, fonctions — tout est coloré |
-| ▶ **Exécution directe** | `Ctrl+Entrée` pour lancer le programme sans quitter VS Code |
-| 💡 **Autocomplétion** | Suggestions intelligentes des mots-clés et fonctions intégrées |
-| 📖 **Documentation au survol** | Passez la souris sur un mot-clé pour voir sa description |
-| ✂️ **Snippets** | Générez des structures complètes en tapant un court préfixe |
-| 🔢 **Indentation auto** | Les blocs `si`, `tant que`, `fonction` s'indentent automatiquement |
-| 📊 **Barre de statut** | Bouton ▶ toujours visible en bas de VS Code |
+| **Coloration syntaxique** | Mots-clés, chaînes, nombres, fonctions — tout est coloré |
+| **Exécution directe** | `Ctrl+Entrée` pour lancer le programme sans quitter VS Code |
+| **Autocomplétion** | Suggestions intelligentes des mots-clés et fonctions intégrées |
+| **Documentation au survol** | Passez la souris sur un mot-clé pour voir sa description |
+| **Snippets** | Générez des structures complètes en tapant un court préfixe |
+| **Indentation auto** | Les blocs `si`, `tant que`, `fonction` s'indentent automatiquement |
+| **Barre de statut** | Bouton ▶ toujours visible en bas de VS Code |
 
 ---
 
-## 🚀 Démarrage rapide
+## Démarrage rapide
 
 1. Créez un fichier `bonjour.fs`
 2. Écrivez votre programme
@@ -42,7 +42,7 @@ La sortie s'affiche instantanément dans le panneau **FrançaisScript** en bas d
 
 ---
 
-## 📝 Syntaxe complète
+## Syntaxe complète
 
 ### Variables
 
@@ -105,7 +105,7 @@ afficher nombres[0]          # 10
 
 ---
 
-## ✂️ Snippets disponibles
+## Snippets disponibles
 
 Tapez le préfixe puis **`Tab`** pour insérer automatiquement :
 
@@ -127,7 +127,7 @@ Tapez le préfixe puis **`Tab`** pour insérer automatiquement :
 
 ---
 
-## 🔧 Fonctions intégrées
+##  Fonctions intégrées
 
 ### Mathématiques
 
@@ -154,7 +154,7 @@ Tapez le préfixe puis **`Tab`** pour insérer automatiquement :
 
 ---
 
-## ⌨️ Raccourcis clavier
+## Raccourcis clavier
 
 | Raccourci | Action |
 |---|---|
@@ -165,7 +165,7 @@ Tapez le préfixe puis **`Tab`** pour insérer automatiquement :
 
 ---
 
-## 🗒️ À propos de FrançaisScript
+##  À propos de FrançaisScript
 
 FrançaisScript est un langage de programmation interprété dont la syntaxe est entièrement en français. Il est conçu pour :
 
@@ -173,10 +173,10 @@ FrançaisScript est un langage de programmation interprété dont la syntaxe est
 - **Les débutants** — un code qui se lit comme du texte français naturel
 - **Les francophones** — programmer dans sa langue maternelle
 
-Site officiel : [francaisscript.fr](https://francaisscript.fr)
+Site officiel : [francaisscript](https://frsscript.netlify.app/)
 
 ---
 
-## 📄 Licence
+## Licence
 
 MIT — © 2026 FrançaisScript

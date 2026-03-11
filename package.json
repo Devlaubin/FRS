@@ -2,7 +2,7 @@
   "name": "francaisscript",
   "displayName": "FrançaisScript",
   "description": "Support officiel de FrançaisScript (.frs) : coloration syntaxique, autocomplétion, snippets et exécution directe depuis VS Code.",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "publisher": "francaisscript",
   "license": "MIT",
   "engines": {
