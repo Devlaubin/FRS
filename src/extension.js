@@ -387,7 +387,7 @@ function executerCode(code, nomFichier) {
     const horodatage = new Date().toLocaleTimeString('fr-FR');
 
     out.appendLine(`╔${separateur}╗`);
-    out.appendLine(`║  FrançaisScript ${nomFichier}  ·  ${horodatage}`);
+    out.appendLine(`║  FrançaisScript ${nomFichier}  ·  ${horodatage}║`);
     out.appendLine(`╚${separateur}╝`);
     out.appendLine('');
 
